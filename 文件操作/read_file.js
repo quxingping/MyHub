@@ -1,17 +1,17 @@
 let fs = require('fs')
 
 //同步读取文件
-const rf = fs.readFileSync('test.txt',{flags:'r',encoding:'utf-8'})
-console.log(rf.toString())
+// const rf = fs.readFileSync('test.txt',{flags:'r',encoding:'utf-8'})
+// console.log(rf.toString())
 
 //异步读取文件
-fs.readFile('test.txt',{flags:'r',encoding:'utf-8'},function (err,data){
-    if(err){
-        console.log(err)
-    }else{
-        console.log(data)
-    }
-})
+// fs.readFile('test.txt',{flags:'r',encoding:'utf-8'},function (err,data){
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log(data)
+//     }
+// })
 
 //promise封装异步方式
 function myRead(path){
