@@ -151,10 +151,81 @@ arr.sort(function(a,b){
 
 在调用函数时，浏览器会帮我们传递两个隐藏参数
 
-this和arguements
+this和arguments
+
+---artuments是一个类数组对象，是封装实参的。
+
+---arguments.length获取实参的长度。
+
+---通过arguments[0]取出实参。
 
 ### call（）
 
+函数对象的方法，通过函数对象来调用。
 
+当对函数调用call() apply()都会调用函数。可以将一个对象指定为第一个参数，被传递的参数（对象）称谓函数执行时的this。
+
+如：fun.call(obj,a,b)
 
 ### apply（）
+
+apply()需要封装到数组中
+
+如：fun.apply(obj,[a,b])
+
+## 正则
+
+手机号正则
+
+```js
+ var re = /^1[3-9][0-9]{9}$/
+```
+
+去除前后的空格
+
+```js
+var reg = /^\s+|\s$g/
+result = str.replace(reg,"")
+```
+
+
+
+### split()
+
+字符串的方法，可以传正则参数.
+
+```js
+        var str = 'a1b2D3d'
+        res = str.split(/[a-z]/i)
+        console.log(res)
+        ["", "1", "2", "3", ""]
+```
+
+### serch()
+
+字符串的方法，可以传正则参数。
+
+```js
+ var str = 'a b cd'
+  // i 表示忽略大小写，返回查找到的第一个符合条件的索引位置
+ res = str.search(/[A-z]/i)
+```
+
+### match()
+
+字符串的方法，可以传正则参数。
+
+提取字符串的内容并返回一个数组。
+
+```js
+var str = 'a b Dd' 
+// ig 表示全局查找，返回所有符合元素的一个数组对象
+res = str.match(/[A-z]d/ig)
+```
+
+### replace()
+
+字符串的方法，可以传正则参数。
+
+默认替换第一个。使用正则全局模式进行所有替换（删除）。
+
