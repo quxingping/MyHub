@@ -229,3 +229,33 @@ res = str.match(/[A-z]d/ig)
 
 默认替换第一个。使用正则全局模式进行所有替换（删除）。
 
+## 函数
+
+call（）方法可以修改this，函数中都带有call方法，使用函数名.call()调用函数。传递的第一个参数是一个对象，此时的this是传递的对象。
+
+## 事件
+
+添加点击事件
+
+```html
+    <script>
+        window.onload = function (){
+            var btn = document.getElementById("btn")
+            bind(btn,'click',function(){
+                alert(this)
+            })
+        }
+        function bind (obj,addevent,callback){
+            if (obj.addEventListener){
+                obj.addEventListener(addevent,callback,false)
+            }else{
+                obj.attachEvent('onclick',function(){
+                    callback.call(obj)
+                })
+            }
+            
+        }
+    </script>
+    <button id="btn">点我</button>
+```
+
